@@ -85,9 +85,9 @@ export class AppComponent implements OnInit {
         });
     }
 
-    //This is used in place of TypeScript DI, thank god.
+    //This is used in place of TypeScript DI, hooray!
     static get parameters(){
-        return [[HeroService]]
+        return [[HeroService]];
     }
 
     heroService;
