@@ -3,7 +3,7 @@ import "zone.js";
 
 import { XHRBackend } from "@angular/http";
 
-import { InMemoryBackendService, SEED_DATA } from "angular2-in-memory-web-api";
+import { InMemoryBackendService, InMemoryBackendConfig, SEED_DATA } from "angular2-in-memory-web-api";
 import { InMemoryDataService } from "./in-memory-data.service";
 
 import { bootstrap } from "@angular/platform-browser-dynamic";
@@ -15,6 +15,7 @@ import { appRouterProviders } from "./app.routes";
 bootstrap(AppComponent, [
     appRouterProviders,
     HTTP_PROVIDERS,
-    { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
-    { provide: SEED_DATA, useClass: InMemoryDataService }      // in-mem server data
+    { provide: XHRBackend, useClass: InMemoryBackendService}, // in-mem server
+    { provide: SEED_DATA, useClass: InMemoryDataService },      // in-mem server data
+    { provide: InMemoryBackendConfig, useValue: { delay: 1} }
 ]);

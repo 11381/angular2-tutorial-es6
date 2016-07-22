@@ -1,4 +1,4 @@
-import { Component, Inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { HeroService } from "./hero.service";
 import { ROUTER_DIRECTIVES } from "@angular/router";
 
