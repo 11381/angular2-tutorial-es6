@@ -2,7 +2,7 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"webpack --watch\" \"npm run lite\"",
+    "start": "concurrently \"webpack --watch --colors\" \"npm run lite\"",
     "lite": "lite-server"
   },
   "license": "WTFPL",
