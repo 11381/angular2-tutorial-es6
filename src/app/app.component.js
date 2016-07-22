@@ -1,14 +1,19 @@
 import { Component, Inject } from "@angular/core";
 import { HeroService } from "./hero.service";
-import { HeroesComponent } from "./heroes.component";
+import { ROUTER_DIRECTIVES } from "@angular/router";
 
 @Component({
     selector: "app",
     template: `
       <h1>{{title}}</h1>
-      <heroes></heroes>
+      <nav>
+        <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+        <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
+      </nav>
+      <router-outlet></router-outlet>
     `,
-    directives: [HeroesComponent],
+    styleUrls: ["app/app.component.css"],
+    directives: [ROUTER_DIRECTIVES],
     providers: [HeroService]
 })
 
